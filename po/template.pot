@@ -1,0 +1,17 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+
+#: src/components/create-project/createProject.html:25
+msgid "A unique name for the project."
+msgstr ""
+
+#: src/components/create-project/createProject.js:21
+msgid "lala"
+msgstr ""
+
+#: src/components/create-project/createProject.html:4
+msgid "Name"
+msgstr ""

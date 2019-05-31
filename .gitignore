@@ -9,3 +9,4 @@ phantomjsdriver.log
 test/test-results.xml
 npm-debug.log
 Chrome_*
+package-lock.json
