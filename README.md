@@ -7,6 +7,20 @@ The common services used for the [OpenShift Management Console](https://github.c
 Contributing
 ------------
 
+## Translate step
+```
+1. add translate for html files, add gettext/gettextCatalog.getString for ts files
+2. use grunt to generate pot file
+$ grunt --gruntfile Gruntfile.translate.js
+3. edit po file to generate po file
+4. use grunt to generate tranlsate-catalog.js file
+$ grunt --gruntfile Gruntfile.translate.js
+5. rebuild
+$ grunt
+6. replace dist folder to origin-web-console/bower_components/origin-web-common
+7. origin-web-console rebuild
+```
+
 #### Getting started
 1. Install [Nodejs](http://nodejs.org/) and [npm](https://www.npmjs.org/)
 2. Install [grunt-cli](http://gruntjs.com/installing-grunt) and [bower](http://bower.io/) by running `npm install -g grunt-cli bower` (may need to be run with sudo)

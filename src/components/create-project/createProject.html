@@ -1,7 +1,7 @@
 <form name="createProjectForm" novalidate>
   <fieldset ng-disabled="disableInputs">
     <div class="form-group">
-      <label for="name" class="required">Name</label>
+      <label for="name" class="required" translate>Name</label>
       <span ng-class="{'has-error': (createProjectForm.name.$error.pattern && createProjectForm.name.$touched) || nameTaken}">
         <input class="form-control"
             name="name"
@@ -22,7 +22,7 @@
             spellcheck="false">
       </span>
       <div>
-        <span class="help-block">A unique name for the project.</span>
+        <span class="help-block" translate>A unique name for the project.</span>
       </div>
       <div class="has-error">
         <span id="nameHelp" class="help-block" ng-if="createProjectForm.name.$error.required && createProjectForm.name.$dirty">

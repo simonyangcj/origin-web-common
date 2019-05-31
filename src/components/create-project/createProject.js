@@ -11,12 +11,14 @@ angular.module("openshiftCommonUI")
         isDialog: '@'
       },
       templateUrl: 'src/components/create-project/createProject.html',
-      controller: function($scope, $location, ProjectsService, NotificationsService, displayNameFilter, Logger) {
+      controller: function($scope, $location, ProjectsService, NotificationsService, displayNameFilter, Logger, gettextCatalog) {
         if(!($scope.submitButtonLabel)) {
           $scope.submitButtonLabel = 'Create';
         }
 
         $scope.isDialog = $scope.isDialog === 'true';
+
+        console.log(gettextCatalog.getString('lala'));
 
         var hideErrorNotifications = function() {
           NotificationsService.hideNotification('create-project-error');

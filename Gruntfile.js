@@ -67,7 +67,8 @@ module.exports = function (grunt) {
             'src/filters/**/*.js',
             'src/services/**/*.js',
             'src/ui-services/**/*.js',
-            'src/components/**/*.js'
+            'src/components/**/*.js',
+            'po/translations-common.js'
           ],
           dest: 'dist/origin-web-common.js'
         }
@@ -171,8 +172,7 @@ module.exports = function (grunt) {
         'copy',
         'ngAnnotate',
         'less',
-        'uglify:build',
-        'test'
+        'uglify:build'
       ]);
     });
 

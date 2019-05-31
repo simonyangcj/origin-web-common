@@ -1,0 +1,30 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"X-Generator: Poedit 2.2.3\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: zh_CN\n"
+
+#: src/components/create-project/createProject.html:25
+msgid "A unique name for the project."
+msgstr "项目的唯一名称"
+
+#: src/components/create-project/createProject.js:21
+msgid "lala"
+msgstr "啦啦"
+
+#: src/components/create-project/createProject.html:9
+msgid "my-project"
+msgstr ""
+
+#: src/components/create-project/createProject.html:4
+#: src/components/create-project/createProject.js:22
+msgid "Name"
+msgstr "名称"

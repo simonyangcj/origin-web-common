@@ -39,7 +39,8 @@
     "karma-ng-html2js-preprocessor": "^1.0.0",
     "karma-phantomjs-launcher": "^1.0.4",
     "matchdep": "0.3.0",
-    "nsp": "^2.6.1"
+    "nsp": "^2.6.1",
+    "grunt-angular-gettext": "~2.1.0"
   },
   "scripts": {
     "test": "grunt test",

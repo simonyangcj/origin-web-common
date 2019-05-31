@@ -188,7 +188,7 @@ angular.module('openshiftCommonUI').run(['$templateCache', function($templateCac
     "<form name=\"createProjectForm\" novalidate>\n" +
     "  <fieldset ng-disabled=\"disableInputs\">\n" +
     "    <div class=\"form-group\">\n" +
-    "      <label for=\"name\" class=\"required\">Name</label>\n" +
+    "      <label for=\"name\" class=\"required\" translate>Name</label>\n" +
     "      <span ng-class=\"{'has-error': (createProjectForm.name.$error.pattern && createProjectForm.name.$touched) || nameTaken}\">\n" +
     "        <input class=\"form-control\"\n" +
     "            name=\"name\"\n" +
@@ -209,7 +209,7 @@ angular.module('openshiftCommonUI').run(['$templateCache', function($templateCac
     "            spellcheck=\"false\">\n" +
     "      </span>\n" +
     "      <div>\n" +
-    "        <span class=\"help-block\">A unique name for the project.</span>\n" +
+    "        <span class=\"help-block\" translate>A unique name for the project.</span>\n" +
     "      </div>\n" +
     "      <div class=\"has-error\">\n" +
     "        <span id=\"nameHelp\" class=\"help-block\" ng-if=\"createProjectForm.name.$error.required && createProjectForm.name.$dirty\">\n" +
