@@ -13,11 +13,11 @@ Contributing
 2. use grunt to generate pot file
 $ grunt --gruntfile Gruntfile.translate.js
 3. edit po file to generate po file
-4. use grunt to generate tranlsate-catalog.js file
+4. use grunt to generate translations-common.js file
 $ grunt --gruntfile Gruntfile.translate.js
 5. rebuild
 $ grunt
-6. replace dist folder to origin-web-console/bower_components/origin-web-common
+6. replace dist/origin-web-common.js to origin-web-console/bower_components/origin-web-common/dist/
 7. origin-web-console rebuild
 ```
 
