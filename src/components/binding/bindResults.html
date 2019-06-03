@@ -1,50 +1,50 @@
 <div ng-if="!ctrl.error && !(ctrl.binding | isBindingFailed)">
   <div ng-if="ctrl.binding && !(ctrl.binding | isBindingReady)" class="results-status">
     <span class="fa fa-clock-o text-muted" aria-hidden="true"></span>
-    <span class="sr-only">Pending</span>
+    <span class="sr-only" translate>Pending</span>
     <div class="results-message">
-      <h3>
+      <h3 translate>
         The binding is being created.
       </h3>
-      <p class="results-message-details">This may take several minutes.</p>
+      <p class="results-message-details" translate>This may take several minutes.</p>
     </div>
   </div>
   <div ng-if="(ctrl.binding | isBindingReady)">
     <div class="results-status">
       <span class="pficon pficon-ok" aria-hidden="true"></span>
-      <span class="sr-only">Success</span>
+      <span class="sr-only" translate>Success</span>
       <div class="results-message">
         <h3>
           <span ng-if="ctrl.bindType === 'application'">
-            <strong>{{ctrl.serviceToBind}}</strong> has been bound to
-            <strong>{{ctrl.applicationToBind}}</strong> successfully.
+            <strong>{{ctrl.serviceToBind}}</strong> <translate>has been bound to</translate>
+            <strong>{{ctrl.applicationToBind}}</strong> <translate>successfully.</translate>
           </span>
           <span ng-if="ctrl.bindType !== 'application'">
-            The binding <strong>{{ctrl.binding.metadata.name}}</strong> has been created successfully.
+            <span translate>The binding</span><strong>{{ctrl.binding.metadata.name}}</strong><span translate> has been created successfully.</span>
           </span>
         </h3>
         <p class="results-message-details">
-          The binding operation created the secret
+          <translate>The binding operation created the secret</translate>
           <a ng-if="ctrl.secretHref" ng-href="{{ctrl.secretHref}}">{{ctrl.binding.spec.secretName}}</a>
           <span ng-if="!ctrl.secretHref">{{ctrl.binding.spec.secretName}}</span>
-          that you may need to reference in your application.
-          <span ng-if="ctrl.showPodPresets">Its data will be available to your application as environment variables.</span>
+          <translate>that you may need to reference in your application.</translate>
+          <span ng-if="ctrl.showPodPresets" translate>Its data will be available to your application as environment variables.</span>
         </p>
       </div>
     </div>
     <div class="alert alert-info results-info" ng-if="ctrl.bindType === 'application'">
       <span class="pficon pficon-info" aria-hidden="true"></span>
-      <span class="sr-only">Info</span>
-      The binding secret will only be available to new pods. You will need to redeploy your application.
+      <span class="sr-only" translate>Info</span>
+      <translate>The binding secret will only be available to new pods. You will need to redeploy your application.</translate>
     </div>
   </div>
 </div>
 <div ng-if="ctrl.error || (ctrl.binding | isBindingFailed)">
   <div class="results-status">
     <span class="pficon pficon-error-circle-o text-danger" aria-hidden="true"></span>
-    <span class="sr-only">Error</span>
+    <span class="sr-only" translate>Error</span>
     <div class="results-message">
-      <h3>
+      <h3 translate>
         The binding could not be created.
       </h3>
     </div>
@@ -53,7 +53,7 @@
     <span ng-if="ctrl.error.data.message">
       {{ctrl.error.data.message | upperFirst}}
     </span>
-    <span ng-if="!ctrl.error.data.message">
+    <span ng-if="!ctrl.error.data.message" translate>
       An error occurred creating the binding.
     </span>
   </div>

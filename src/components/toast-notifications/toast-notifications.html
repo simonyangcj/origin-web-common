@@ -6,7 +6,7 @@
     <div class="toast-pf alert {{notification.type | alertStatus}}" ng-class="{'alert-dismissable': !hideCloseButton}">
       <button ng-if="!hideCloseButton" type="button" class="close" ng-click="close(notification)">
         <span class="pficon pficon-close" aria-hidden="true"></span>
-        <span class="sr-only">Close</span>
+        <span class="sr-only" translate>Close</span>
       </button>
       <span class="{{notification.type | alertIcon}}" aria-hidden="true"></span>
       <span class="sr-only">{{notification.type}}</span>

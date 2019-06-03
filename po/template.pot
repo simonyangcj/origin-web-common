@@ -4,14 +4,275 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
+#: src/components/create-project/createProject.html:65
+msgid "A short description."
+msgstr ""
+
 #: src/components/create-project/createProject.html:25
 msgid "A unique name for the project."
 msgstr ""
 
-#: src/components/create-project/createProject.js:21
-msgid "lala"
+#: src/components/create-project/createProject.js:49
+msgid "An error occurred creating project {{displayName}}."
+msgstr ""
+
+#: src/components/binding/bindResults.html:56
+msgid "An error occurred creating the binding."
+msgstr ""
+
+#: src/components/edit-project/editProject.js:86
+msgid "An error occurred while updating project {{displayName}}."
+msgstr ""
+
+#: src/components/delete-project/delete-project-modal.html:12
+msgid "and"
+msgstr ""
+
+#: src/components/delete-project/delete-project-modal.html:8
+msgid "Are you sure you want to delete the project"
+msgstr ""
+
+#: src/components/delete-project/delete-project-modal.html:12
+msgid "associated with the project"
+msgstr ""
+
+#: src/components/binding/bindApplicationForm.html:25
+#: src/components/binding/bindServiceForm.html:46
+msgid "Bindings can be created later from within a project."
+msgstr ""
+
+#: src/components/binding/bindApplicationForm.html:7
+msgid "Bindings create a secret containing the necessary information for an application to use a service."
+msgstr ""
+
+#: src/components/binding/bindServiceForm.html:7
+msgid "Bindings create a secret containing the necessary information for an application to use this service."
+msgstr ""
+
+#: src/components/create-project/createProject.html:78
+#: src/components/delete-project/delete-project-modal.html:32
+#: src/components/edit-project/editProject.html:29
+msgid "Cancel"
+msgstr ""
+
+#: src/components/delete-project/delete-project-modal.html:13
+msgid "cannot be undone"
+msgstr ""
+
+#: src/components/toast-notifications/toast-notifications.html:9
+msgid "Close"
+msgstr ""
+
+#: src/components/truncate-long-text/truncateLongText.html:27
+msgid "Collapse"
+msgstr ""
+
+#: src/components/delete-project/deleteProject.js:87
+#: src/components/delete-project/deleteProject.js:90
+msgid "could not be deleted."
+msgstr ""
+
+#: src/components/create-project/createProject.html:70
+#: src/components/create-project/createProject.js:16
+msgid "Create"
+msgstr ""
+
+#: src/components/binding/bindServiceForm.html:5
+msgid "Create a binding for"
+msgstr ""
+
+#: src/components/binding/bindApplicationForm.html:5
+msgid "Create a binding for application"
+msgstr ""
+
+#: src/components/binding/bindServiceForm.html:37
+msgid "Create a secret in"
+msgstr ""
+
+#: src/components/delete-project/delete-project-modal.html:12
+msgid "delete all resources"
+msgstr ""
+
+#: src/components/delete-project/delete-project-button.html:10
+msgid "Delete Project"
+msgstr ""
+
+#: src/components/create-project/createProject.html:61
+#: src/components/edit-project/editProject.html:14
+msgid "Description"
+msgstr ""
+
+#: src/components/create-project/createProject.html:51
+#: src/components/edit-project/editProject.html:4
+msgid "Display Name"
+msgstr ""
+
+#: src/components/binding/bindApplicationForm.html:22
+msgid "Do not bind at this time."
+msgstr ""
+
+#: src/components/binding/bindResults.html:45
+msgid "Error"
+msgstr ""
+
+#: src/components/binding/bindResults.html:19
+msgid "has been bound to"
+msgstr ""
+
+#: src/components/binding/bindResults.html:23
+msgid "has been created successfully."
+msgstr ""
+
+#: src/components/binding/bindResults.html:37
+msgid "Info"
+msgstr ""
+
+#: src/components/binding/bindResults.html:31
+msgid "Its data will be available to your application as environment variables."
+msgstr ""
+
+#: src/components/delete-project/delete-project-modal.html:13
+msgid "Make sure this is something you really want to do!"
+msgstr ""
+
+#: src/components/create-project/createProject.html:55
+msgid "My Project"
+msgstr ""
+
+#: src/components/create-project/createProject.html:9
+msgid "my-project"
 msgstr ""
 
 #: src/components/create-project/createProject.html:4
 msgid "Name"
+msgstr ""
+
+#: src/components/create-project/createProject.html:28
+msgid "Name is required."
+msgstr ""
+
+#: src/components/create-project/createProject.html:33
+msgid "Name must have at least two characters."
+msgstr ""
+
+#: src/components/binding/bindResults.html:4
+msgid "Pending"
+msgstr ""
+
+#: src/components/create-project/createProject.js:54
+msgid "Project {{displayName}} could not be created."
+msgstr ""
+
+#: src/components/edit-project/editProject.js:89
+msgid "Project {{displayName}} could not be updated."
+msgstr ""
+
+#: src/components/create-project/createProject.js:41
+msgid "Project {{name}} was successfully created."
+msgstr ""
+
+#: src/components/edit-project/editProject.js:79
+msgid "Project {{name}} was successfully updated."
+msgstr ""
+
+#: src/components/create-project/createProject.html:38
+msgid ""
+"Project names may only contain lower-case letters, numbers, and dashes.\n"
+"          They may not start or end with a dash."
+msgstr ""
+
+#: src/components/delete-project/delete-project-modal.html:18
+msgid "project to delete"
+msgstr ""
+
+#: src/components/edit-project/editProject.js:26
+msgid "Save"
+msgstr ""
+
+#: src/components/binding/bindServiceForm.html:39
+msgid "Secrets can be referenced later from an application."
+msgstr ""
+
+#: src/components/truncate-long-text/truncateLongText.html:18
+msgid "See All"
+msgstr ""
+
+#: src/components/binding/bindApplicationForm.html:13
+msgid "Select a service:"
+msgstr ""
+
+#: src/components/binding/bindServiceForm.js:19
+msgid "Select an application"
+msgstr ""
+
+#: src/components/binding/bindResults.html:15
+msgid "Success"
+msgstr ""
+
+#: src/components/binding/bindResults.html:20
+msgid "successfully."
+msgstr ""
+
+#: src/components/binding/bindResults.html:30
+msgid "that you may need to reference in your application."
+msgstr ""
+
+#: src/components/binding/bindResults.html:23
+msgid "The binding"
+msgstr ""
+
+#: src/components/binding/bindResults.html:47
+msgid "The binding could not be created."
+msgstr ""
+
+#: src/components/binding/bindResults.html:6
+msgid "The binding is being created."
+msgstr ""
+
+#: src/components/binding/bindResults.html:27
+msgid "The binding operation created the secret"
+msgstr ""
+
+#: src/components/binding/bindResults.html:38
+msgid "The binding secret will only be available to new pods. You will need to redeploy your application."
+msgstr ""
+
+#: src/components/binding/bindServiceForm.js:19
+msgid "There are no applications in this project"
+msgstr ""
+
+#: src/components/binding/bindApplicationForm.html:49
+msgid "There are no bindable services in this project"
+msgstr ""
+
+#: src/components/binding/bindResults.html:9
+msgid "This may take several minutes."
+msgstr ""
+
+#: src/components/create-project/createProject.html:44
+msgid "This name is already in use. Please choose a different name."
+msgstr ""
+
+#: src/components/binding/bindApplicationForm.html:38
+msgid "This service is not yet ready. If you bind to it, then the binding will be pending until the service is ready."
+msgstr ""
+
+#: src/components/delete-project/delete-project-modal.html:12
+msgid "This will"
+msgstr ""
+
+#: src/components/binding/bindServiceForm.html:37
+msgid "to be used later"
+msgstr ""
+
+#: src/components/delete-project/delete-project-modal.html:16
+msgid "to confirm deletion."
+msgstr ""
+
+#: src/components/delete-project/delete-project-modal.html:16
+msgid "Type"
+msgstr ""
+
+#: src/components/delete-project/deleteProject.js:74
+msgid "was marked for deletion."
 msgstr ""

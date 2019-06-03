@@ -463,15 +463,15 @@ angular.module('openshiftCommonUI').run(['$templateCache', function($templateCac
     "  <form>\n" +
     "    <div class=\"form-group\">\n" +
     "      <label>\n" +
-    "        <h3>Create a binding for application <strong>{{ctrl.applicationName}}</strong></h3>\n" +
+    "        <h3><span translate>Create a binding for application</span> <strong>{{ctrl.applicationName}}</strong></h3>\n" +
     "      </label>\n" +
-    "      <span class=\"help-block\">\n" +
+    "      <span class=\"help-block\" translate>\n" +
     "        Bindings create a secret containing the necessary information for an application to use a service.\n" +
     "      </span>\n" +
     "    </div>\n" +
     "  </form>\n" +
     "\n" +
-    "  <label ng-if=\"!ctrl.allowNoBinding\">\n" +
+    "  <label ng-if=\"!ctrl.allowNoBinding\" translate>\n" +
     "    Select a service:\n" +
     "  </label>\n" +
     "  <form name=\"ctrl.formName\">\n" +
@@ -480,10 +480,10 @@ angular.module('openshiftCommonUI').run(['$templateCache', function($templateCac
     "        <div ng-if=\"ctrl.allowNoBinding\" class=\"bind-service-selection\">\n" +
     "          <label>\n" +
     "            <input type=\"radio\" ng-model=\"ctrl.serviceToBind\" ng-value=\"null\">\n" +
-    "            Do not bind at this time.\n" +
+    "            <translate>Do not bind at this time.</translate>\n" +
     "          </label>\n" +
     "          <div class=\"bind-description\">\n" +
-    "          <span class=\"help-block service-instance-name\">\n" +
+    "          <span class=\"help-block service-instance-name\" translate>\n" +
     "            Bindings can be created later from within a project.\n" +
     "          </span>\n" +
     "          </div>\n" +
@@ -496,7 +496,7 @@ angular.module('openshiftCommonUI').run(['$templateCache', function($templateCac
     "          <div class=\"bind-description\">\n" +
     "            <span class=\"pficon pficon-info\"\n" +
     "                  ng-if=\"!(serviceInstance | isServiceInstanceReady)\"\n" +
-    "                  data-content=\"This service is not yet ready. If you bind to it, then the binding will be pending until the service is ready.\"\n" +
+    "                  data-content=\"{{'This service is not yet ready. If you bind to it, then the binding will be pending until the service is ready.' | translate}}\"\n" +
     "                  data-toggle=\"popover\"\n" +
     "                  data-trigger=\"hover\">\n" +
     "            </span>\n" +
@@ -507,7 +507,7 @@ angular.module('openshiftCommonUI').run(['$templateCache', function($templateCac
     "        </div>\n" +
     "        <h4 ng-if=\"!ctrl.bindableServiceInstances.length\">\n" +
     "          <span class=\"pficon pficon-info\" aria-hidden=\"true\"></span>\n" +
-    "          <span class=\"help-block service-instance-name\">\n" +
+    "          <span class=\"help-block service-instance-name\" translate>\n" +
     "            There are no bindable services in this project\n" +
     "          </span>\n" +
     "        </h4>\n" +
@@ -522,50 +522,50 @@ angular.module('openshiftCommonUI').run(['$templateCache', function($templateCac
     "<div ng-if=\"!ctrl.error && !(ctrl.binding | isBindingFailed)\">\n" +
     "  <div ng-if=\"ctrl.binding && !(ctrl.binding | isBindingReady)\" class=\"results-status\">\n" +
     "    <span class=\"fa fa-clock-o text-muted\" aria-hidden=\"true\"></span>\n" +
-    "    <span class=\"sr-only\">Pending</span>\n" +
+    "    <span class=\"sr-only\" translate>Pending</span>\n" +
     "    <div class=\"results-message\">\n" +
-    "      <h3>\n" +
+    "      <h3 translate>\n" +
     "        The binding is being created.\n" +
     "      </h3>\n" +
-    "      <p class=\"results-message-details\">This may take several minutes.</p>\n" +
+    "      <p class=\"results-message-details\" translate>This may take several minutes.</p>\n" +
     "    </div>\n" +
     "  </div>\n" +
     "  <div ng-if=\"(ctrl.binding | isBindingReady)\">\n" +
     "    <div class=\"results-status\">\n" +
     "      <span class=\"pficon pficon-ok\" aria-hidden=\"true\"></span>\n" +
-    "      <span class=\"sr-only\">Success</span>\n" +
+    "      <span class=\"sr-only\" translate>Success</span>\n" +
     "      <div class=\"results-message\">\n" +
     "        <h3>\n" +
     "          <span ng-if=\"ctrl.bindType === 'application'\">\n" +
-    "            <strong>{{ctrl.serviceToBind}}</strong> has been bound to\n" +
-    "            <strong>{{ctrl.applicationToBind}}</strong> successfully.\n" +
+    "            <strong>{{ctrl.serviceToBind}}</strong> <translate>has been bound to</translate>\n" +
+    "            <strong>{{ctrl.applicationToBind}}</strong> <translate>successfully.</translate>\n" +
     "          </span>\n" +
     "          <span ng-if=\"ctrl.bindType !== 'application'\">\n" +
-    "            The binding <strong>{{ctrl.binding.metadata.name}}</strong> has been created successfully.\n" +
+    "            <span translate>The binding</span><strong>{{ctrl.binding.metadata.name}}</strong><span translate> has been created successfully.</span>\n" +
     "          </span>\n" +
     "        </h3>\n" +
     "        <p class=\"results-message-details\">\n" +
-    "          The binding operation created the secret\n" +
+    "          <translate>The binding operation created the secret</translate>\n" +
     "          <a ng-if=\"ctrl.secretHref\" ng-href=\"{{ctrl.secretHref}}\">{{ctrl.binding.spec.secretName}}</a>\n" +
     "          <span ng-if=\"!ctrl.secretHref\">{{ctrl.binding.spec.secretName}}</span>\n" +
-    "          that you may need to reference in your application.\n" +
-    "          <span ng-if=\"ctrl.showPodPresets\">Its data will be available to your application as environment variables.</span>\n" +
+    "          <translate>that you may need to reference in your application.</translate>\n" +
+    "          <span ng-if=\"ctrl.showPodPresets\" translate>Its data will be available to your application as environment variables.</span>\n" +
     "        </p>\n" +
     "      </div>\n" +
     "    </div>\n" +
     "    <div class=\"alert alert-info results-info\" ng-if=\"ctrl.bindType === 'application'\">\n" +
     "      <span class=\"pficon pficon-info\" aria-hidden=\"true\"></span>\n" +
-    "      <span class=\"sr-only\">Info</span>\n" +
-    "      The binding secret will only be available to new pods. You will need to redeploy your application.\n" +
+    "      <span class=\"sr-only\" translate>Info</span>\n" +
+    "      <translate>The binding secret will only be available to new pods. You will need to redeploy your application.</translate>\n" +
     "    </div>\n" +
     "  </div>\n" +
     "</div>\n" +
     "<div ng-if=\"ctrl.error || (ctrl.binding | isBindingFailed)\">\n" +
     "  <div class=\"results-status\">\n" +
     "    <span class=\"pficon pficon-error-circle-o text-danger\" aria-hidden=\"true\"></span>\n" +
-    "    <span class=\"sr-only\">Error</span>\n" +
+    "    <span class=\"sr-only\" translate>Error</span>\n" +
     "    <div class=\"results-message\">\n" +
-    "      <h3>\n" +
+    "      <h3 translate>\n" +
     "        The binding could not be created.\n" +
     "      </h3>\n" +
     "    </div>\n" +
@@ -574,7 +574,7 @@ angular.module('openshiftCommonUI').run(['$templateCache', function($templateCac
     "    <span ng-if=\"ctrl.error.data.message\">\n" +
     "      {{ctrl.error.data.message | upperFirst}}\n" +
     "    </span>\n" +
-    "    <span ng-if=\"!ctrl.error.data.message\">\n" +
+    "    <span ng-if=\"!ctrl.error.data.message\" translate>\n" +
     "      An error occurred creating the binding.\n" +
     "    </span>\n" +
     "  </div>\n" +
@@ -590,9 +590,9 @@ angular.module('openshiftCommonUI').run(['$templateCache', function($templateCac
     "  <form>\n" +
     "    <div class=\"form-group\">\n" +
     "      <label>\n" +
-    "        <h3>Create a binding for <strong>{{ctrl.serviceClass.spec.externalMetadata.displayName || ctrl.serviceClass.spec.externalName}}</strong></h3>\n" +
+    "        <h3><span translate>Create a binding for</span> <strong>{{ctrl.serviceClass.spec.externalMetadata.displayName || ctrl.serviceClass.spec.externalName}}</strong></h3>\n" +
     "      </label>\n" +
-    "      <span class=\"help-block\">Bindings create a secret containing the necessary information for an application to use this service.</span>\n" +
+    "      <span class=\"help-block\" translate>Bindings create a secret containing the necessary information for an application to use this service.</span>\n" +
     "    </div>\n" +
     "  </form>\n" +
     "\n" +
@@ -600,14 +600,14 @@ angular.module('openshiftCommonUI').run(['$templateCache', function($templateCac
     "    <fieldset>\n" +
     "      <div class=\"radio\">\n" +
     "        <label ng-if=\"ctrl.showPodPresets\" class=\"bind-choice\" ng-disabled=\"!ctrl.applications.length\">\n" +
-    "          <input type=\"radio\" ng-model=\"ctrl.bindType\" value=\"application\" ng-disabled=\"!ctrl.applications.length\">\n" +
+    "          <input type=\"radio\" ng-model=\"ctrl.bindType\" value=\"application\" ng-disabled=\"!ctrl.applications.length\" translate>\n" +
     "          Create a secret and inject it into an application\n" +
     "        </label>\n" +
     "        <div ng-if=\"ctrl.showPodPresets\" class=\"application-select\">\n" +
     "          <ui-select ng-model=\"ctrl.appToBind\"\n" +
     "                     ng-disabled=\"ctrl.bindType !== 'application'\"\n" +
     "                     ng-required=\"ctrl.bindType === 'application'\">\n" +
-    "            <ui-select-match placeholder=\"{{ctrl.applications.length ? 'Select an application' : 'There are no applications in this project'}}\">\n" +
+    "            <ui-select-match placeholder=\"{{ctrl.uiSelectMatchPlaceholder}}\">\n" +
     "              <span>\n" +
     "                {{$select.selected.metadata.name}}\n" +
     "                <small class=\"text-muted\">&ndash; {{$select.selected.kind | humanizeKind : true}}</small>\n" +
@@ -622,16 +622,16 @@ angular.module('openshiftCommonUI').run(['$templateCache', function($templateCac
     "        </div>\n" +
     "        <label class=\"bind-choice\">\n" +
     "          <input type=\"radio\" ng-model=\"ctrl.bindType\" value=\"secret-only\">\n" +
-    "          Create a secret in <strong>{{ctrl.projectName}}</strong> to be used later\n" +
+    "          <span translate>Create a secret in</span> <strong>{{ctrl.projectName}}</strong> <span translate>to be used later</span>\n" +
     "        </label>\n" +
-    "        <div class=\"help-block bind-description\">\n" +
+    "        <div class=\"help-block bind-description\" translate>\n" +
     "          Secrets can be referenced later from an application.\n" +
     "        </div>\n" +
     "        <label ng-if=\"ctrl.allowNoBinding\" class=\"bind-choice\">\n" +
-    "          <input type=\"radio\" ng-model=\"ctrl.bindType\" value=\"none\">\n" +
+    "          <input type=\"radio\" ng-model=\"ctrl.bindType\" value=\"none\" translate>\n" +
     "          Do not bind at this time\n" +
     "        </label>\n" +
-    "        <div ng-if=\"ctrl.allowNoBinding\" class=\"help-block bind-description\">\n" +
+    "        <div ng-if=\"ctrl.allowNoBinding\" class=\"help-block bind-description\" translate>\n" +
     "          Bindings can be created later from within a project.\n" +
     "        </div>\n" +
     "      </div>\n" +
@@ -650,7 +650,7 @@ angular.module('openshiftCommonUI').run(['$templateCache', function($templateCac
     "        <input class=\"form-control\"\n" +
     "            name=\"name\"\n" +
     "            id=\"name\"\n" +
-    "            placeholder=\"my-project\"\n" +
+    "            placeholder=\"{{'my-project' | translate}}\"\n" +
     "            type=\"text\"\n" +
     "            required\n" +
     "            take-focus\n" +
@@ -669,44 +669,44 @@ angular.module('openshiftCommonUI').run(['$templateCache', function($templateCac
     "        <span class=\"help-block\" translate>A unique name for the project.</span>\n" +
     "      </div>\n" +
     "      <div class=\"has-error\">\n" +
-    "        <span id=\"nameHelp\" class=\"help-block\" ng-if=\"createProjectForm.name.$error.required && createProjectForm.name.$dirty\">\n" +
+    "        <span id=\"nameHelp\" class=\"help-block\" ng-if=\"createProjectForm.name.$error.required && createProjectForm.name.$dirty\" translate>\n" +
     "          Name is required.\n" +
     "        </span>\n" +
     "      </div>\n" +
     "      <div class=\"has-error\">\n" +
-    "        <span id=\"nameHelp\" class=\"help-block\" ng-if=\"createProjectForm.name.$error.minlength && createProjectForm.name.$touched\">\n" +
+    "        <span id=\"nameHelp\" class=\"help-block\" ng-if=\"createProjectForm.name.$error.minlength && createProjectForm.name.$touched\" translate>\n" +
     "          Name must have at least two characters.\n" +
     "        </span>\n" +
     "      </div>\n" +
     "      <div class=\"has-error\">\n" +
-    "        <span id=\"nameHelp\" class=\"help-block\" ng-if=\"createProjectForm.name.$error.pattern && createProjectForm.name.$touched\">\n" +
+    "        <span id=\"nameHelp\" class=\"help-block\" ng-if=\"createProjectForm.name.$error.pattern && createProjectForm.name.$touched\" translate>\n" +
     "          Project names may only contain lower-case letters, numbers, and dashes.\n" +
     "          They may not start or end with a dash.\n" +
     "        </span>\n" +
     "      </div>\n" +
     "      <div class=\"has-error\">\n" +
-    "        <span class=\"help-block\" ng-if=\"nameTaken\">\n" +
+    "        <span class=\"help-block\" ng-if=\"nameTaken\" translate>\n" +
     "          This name is already in use. Please choose a different name.\n" +
     "        </span>\n" +
     "      </div>\n" +
     "    </div>\n" +
     "\n" +
     "    <div class=\"form-group\">\n" +
-    "      <label for=\"displayName\">Display Name</label>\n" +
+    "      <label for=\"displayName\" translate>Display Name</label>\n" +
     "      <input class=\"form-control\"\n" +
     "          name=\"displayName\"\n" +
     "          id=\"displayName\"\n" +
-    "          placeholder=\"My Project\"\n" +
+    "          placeholder=\"{{'My Project' | translate}}\"\n" +
     "          type=\"text\"\n" +
     "          ng-model=\"displayName\">\n" +
     "    </div>\n" +
     "\n" +
     "    <div class=\"form-group\">\n" +
-    "      <label for=\"description\">Description</label>\n" +
+    "      <label for=\"description\" translate>Description</label>\n" +
     "      <textarea class=\"form-control\"\n" +
     "          name=\"description\"\n" +
     "          id=\"description\"\n" +
-    "          placeholder=\"A short description.\"\n" +
+    "          placeholder=\"{{'A short description.' | translate}}\"\n" +
     "          ng-model=\"description\"></textarea>\n" +
     "    </div>\n" +
     "\n" +
@@ -716,13 +716,13 @@ angular.module('openshiftCommonUI').run(['$templateCache', function($templateCac
     "          ng-class=\"{'dialog-btn': isDialog}\"\n" +
     "          ng-click=\"createProject()\"\n" +
     "          ng-disabled=\"createProjectForm.$invalid || nameTaken || disableInputs\"\n" +
-    "          value=\"\">\n" +
+    "          value=\"\" translate>\n" +
     "        Create\n" +
     "      </button>\n" +
     "      <button\n" +
     "          class=\"btn btn-default\"\n" +
     "          ng-class=\"{'dialog-btn': isDialog}\"\n" +
-    "          ng-click=\"cancelCreateProject()\">\n" +
+    "          ng-click=\"cancelCreateProject()\" translate>\n" +
     "        Cancel\n" +
     "      </button>\n" +
     "    </div>\n" +
@@ -741,7 +741,7 @@ angular.module('openshiftCommonUI').run(['$templateCache', function($templateCac
     "     ng-attr-aria-disabled=\"{{disableDelete ? 'true' : undefined}}\"\n" +
     "     ng-class=\"{ 'disabled-link': disableDelete }\"\n" +
     "    ><i class=\"fa fa-trash-o\" aria-hidden=\"true\"\n" +
-    "    ></i><span class=\"sr-only\">Delete Project {{projectName}}</span></a>\n" +
+    "    ></i><span class=\"sr-only\"><span translate>Delete Project</span> {{projectName}}</span></a>\n" +
     "</div>\n"
   );
 
@@ -754,18 +754,17 @@ angular.module('openshiftCommonUI').run(['$templateCache', function($templateCac
     "      <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\" aria-label=\"Close\" ng-click=\"cancel()\">\n" +
     "        <span class=\"pficon pficon-close\"></span>\n" +
     "      </button>\n" +
-    "      <h1 class=\"modal-title\">Are you sure you want to delete the project '<strong>{{project | displayName}}</strong>'?</h1>\n" +
+    "      <h1 class=\"modal-title\"><translate>Are you sure you want to delete the project</translate> '<strong>{{project | displayName}}</strong>'?</h1>\n" +
     "    </div>\n" +
     "    <div class=\"modal-body\">\n" +
     "      <p>\n" +
-    "        This will <strong>delete all resources</strong> associated with\n" +
-    "        the project {{project | displayName}} and <strong>cannot be\n" +
-    "        undone</strong>.  Make sure this is something you really want to do!\n" +
+    "        <translate>This will</translate> <strong translate>delete all resources</strong> <translate>associated with the project</translate> {{project | displayName}} <translate>and</translate>\n" +
+    "        <strong translate>cannot be undone</strong>.  <translate>Make sure this is something you really want to do!</translate>\n" +
     "      </p>\n" +
     "      <div ng-show=\"typeNameToConfirm\">\n" +
-    "        <p>Type <strong>{{project.metadata.name}}</strong> to confirm deletion.</p>\n" +
+    "        <p><translate>Type</translate> <strong>{{project.metadata.name}}</strong> <translate>to confirm deletion.</translate></p>\n" +
     "        <p>\n" +
-    "          <label class=\"sr-only\" for=\"resource-to-delete\">project to delete</label>\n" +
+    "          <label class=\"sr-only\" for=\"resource-to-delete\" translate>project to delete</label>\n" +
     "          <input\n" +
     "              ng-model=\"confirmName\"\n" +
     "              id=\"resource-to-delete\"\n" +
@@ -779,7 +778,7 @@ angular.module('openshiftCommonUI').run(['$templateCache', function($templateCac
     "      </div>\n" +
     "    </div>\n" +
     "    <div class=\"modal-footer\">\n" +
-    "      <button class=\"btn btn-default\" type=\"button\" ng-click=\"cancel()\">Cancel</button>\n" +
+    "      <button class=\"btn btn-default\" type=\"button\" ng-click=\"cancel()\" translate>Cancel</button>\n" +
     "      <button ng-disabled=\"typeNameToConfirm && confirmName !== project.metadata.name && confirmName !== (project | displayName : false)\" class=\"btn btn-danger\" type=\"submit\" ng-click=\"delete()\">Delete</button>\n" +
     "    </div>\n" +
     "  </form>\n" +
@@ -801,21 +800,21 @@ angular.module('openshiftCommonUI').run(['$templateCache', function($templateCac
     "<form name=\"editProjectForm\">\n" +
     "  <fieldset ng-disabled=\"disableInputs\">\n" +
     "    <div class=\"form-group\">\n" +
-    "      <label for=\"displayName\">Display Name</label>\n" +
+    "      <label for=\"displayName\" translate>Display Name</label>\n" +
     "      <input class=\"form-control\"\n" +
     "             name=\"displayName\"\n" +
     "             id=\"displayName\"\n" +
-    "             placeholder=\"My Project\"\n" +
+    "             placeholder=\"{{My Project | translate}}\"\n" +
     "             type=\"text\"\n" +
     "             ng-model=\"editableFields.displayName\">\n" +
     "    </div>\n" +
     "\n" +
     "    <div class=\"form-group\">\n" +
-    "      <label for=\"description\">Description</label>\n" +
+    "      <label for=\"description\" translate>Description</label>\n" +
     "                    <textarea class=\"form-control\"\n" +
     "                              name=\"description\"\n" +
     "                              id=\"description\"\n" +
-    "                              placeholder=\"A short description.\"\n" +
+    "                              placeholder=\"{{A short description. | translate}}\"\n" +
     "                              ng-model=\"editableFields.description\"></textarea>\n" +
     "    </div>\n" +
     "\n" +
@@ -829,7 +828,7 @@ angular.module('openshiftCommonUI').run(['$templateCache', function($templateCac
     "      <button\n" +
     "          class=\"btn btn-default\"\n" +
     "          ng-class=\"{'dialog-btn': isDialog}\"\n" +
-    "          ng-click=\"cancelEditProject()\">\n" +
+    "          ng-click=\"cancelEditProject()\" translate>\n" +
     "        Cancel\n" +
     "      </button>\n" +
     "    </div>\n" +
@@ -861,7 +860,7 @@ angular.module('openshiftCommonUI').run(['$templateCache', function($templateCac
     "    <div class=\"toast-pf alert {{notification.type | alertStatus}}\" ng-class=\"{'alert-dismissable': !hideCloseButton}\">\n" +
     "      <button ng-if=\"!hideCloseButton\" type=\"button\" class=\"close\" ng-click=\"close(notification)\">\n" +
     "        <span class=\"pficon pficon-close\" aria-hidden=\"true\"></span>\n" +
-    "        <span class=\"sr-only\">Close</span>\n" +
+    "        <span class=\"sr-only\" translate>Close</span>\n" +
     "      </button>\n" +
     "      <span class=\"{{notification.type | alertIcon}}\" aria-hidden=\"true\"></span>\n" +
     "      <span class=\"sr-only\">{{notification.type}}</span>\n" +
@@ -904,7 +903,7 @@ angular.module('openshiftCommonUI').run(['$templateCache', function($templateCac
     "    <span ng-attr-title=\"{{content}}\" class=\"truncation-block\">\n" +
     "      <span ng-bind-html=\"truncatedContent | highlightKeywords : keywords\" class=\"truncated-content\"></span>&hellip;\n" +
     "    </span>\n" +
-    "    <a ng-if=\"expandable\" href=\"\" ng-click=\"toggles.expanded = true\" class=\"truncation-expand-link\">See All</a>\n" +
+    "    <a ng-if=\"expandable\" href=\"\" ng-click=\"toggles.expanded = true\" class=\"truncation-expand-link\" translate>See All</a>\n" +
     "  </span>\n" +
     "  <span ng-if=\"toggles.expanded\">\n" +
     "    <span ng-if=\"!linkify || (highlightKeywords | size)\"\n" +
@@ -913,7 +912,7 @@ angular.module('openshiftCommonUI').run(['$templateCache', function($templateCac
     "    <span ng-if=\"linkify && !(highlightKeywords | size)\"\n" +
     "          ng-bind-html=\"content | linkify : '_blank'\"\n" +
     "          class=\"truncated-content\"></span>\n" +
-    "    <a href=\"\" ng-if=\"!hideCollapse\" ng-click=\"toggles.expanded = false\" class=\"truncation-collapse-link\">Collapse</a>\n" +
+    "    <a href=\"\" ng-if=\"!hideCollapse\" ng-click=\"toggles.expanded = false\" class=\"truncation-collapse-link\" translate>Collapse</a>\n" +
     "  </span>\n" +
     "</span>\n"
   );
@@ -979,8 +978,10 @@ angular.module('openshiftCommonUI').component('bindServiceForm', {
     appToBind: '=' // only applicable to 'application' bindType
   },
   templateUrl: 'src/components/binding/bindServiceForm.html',
-  controller: function ($filter) {
+  controller: function ($filter, gettextCatalog) {
     var ctrl = this;
+
+    ctrl.uiSelectMatchPlaceholder = this.applications.length ? gettextCatalog.getString('Select an application') : gettextCatalog.getString('There are no applications in this project');
 
     var humanizeKind = $filter('humanizeKind');
     ctrl.groupByKind = function(object) {
@@ -1004,12 +1005,10 @@ angular.module("openshiftCommonUI")
       templateUrl: 'src/components/create-project/createProject.html',
       controller: function($scope, $location, ProjectsService, NotificationsService, displayNameFilter, Logger, gettextCatalog) {
         if(!($scope.submitButtonLabel)) {
-          $scope.submitButtonLabel = 'Create';
+          $scope.submitButtonLabel = gettextCatalog.getString('Create');
         }
 
         $scope.isDialog = $scope.isDialog === 'true';
-
-        console.log(gettextCatalog.getString('lala'));
 
         var hideErrorNotifications = function() {
           NotificationsService.hideNotification('create-project-error');
@@ -1031,7 +1030,7 @@ angular.module("openshiftCommonUI")
                 }
                 NotificationsService.addNotification({
                   type: "success",
-                  message: "Project \'"  + displayNameFilter(project) + "\' was successfully created."
+                  message: gettextCatalog.getString("Project {{name}} was successfully created.",{name: displayNameFilter(project)})
                 });
               }, function(result) {
                 $scope.disableInputs = false;
@@ -1039,12 +1038,12 @@ angular.module("openshiftCommonUI")
                 if (data.reason === 'AlreadyExists') {
                   $scope.nameTaken = true;
                 } else {
-                  var msg = data.message || "An error occurred creating project \'" + displayName + "\'.";
+                  var msg = data.message || gettextCatalog.getString("An error occurred creating project {{displayName}}.",{displayName: displayName});
                   NotificationsService.addNotification({
                     type: 'error',
                     message: msg
                   });
-                  Logger.error("Project \'" + displayName + "\' could not be created.", result);
+                  Logger.error(gettextCatalog.getString("Project {{displayName}} could not be created.",{displayName: displayName}), result);
                 }
               });
           }
@@ -1069,7 +1068,7 @@ angular.module("openshiftCommonUI")
 'use strict';
 
 angular.module("openshiftCommonUI")
-  .directive("deleteProject", function($uibModal, $location, $filter, $q, hashSizeFilter, APIService, NotificationsService, ProjectsService, Logger) {
+  .directive("deleteProject", function($uibModal, $location, $filter, $q, hashSizeFilter, APIService, NotificationsService, ProjectsService, Logger, gettextCatalog) {
     return {
       restrict: "E",
       scope: {
@@ -1139,7 +1138,7 @@ angular.module("openshiftCommonUI")
             ProjectsService.delete(scope.project).then(function() {
               NotificationsService.addNotification({
                 type: "success",
-                message: formattedResource + " was marked for deletion."
+                message: formattedResource + gettextCatalog.getString(" was marked for deletion.")
               });
 
               if (scope.success) {
@@ -1152,10 +1151,10 @@ angular.module("openshiftCommonUI")
               // called if failure to delete
               NotificationsService.addNotification({
                 type: "error",
-                message: formattedResource + " could not be deleted.",
+                message: formattedResource + gettextCatalog.getString(" could not be deleted."),
                 details: $filter('getErrorDetails')(err)
               });
-              Logger.error(formattedResource + " could not be deleted.", err);
+              Logger.error(formattedResource + gettextCatalog.getString(" could not be deleted."), err);
             });
           });
         };
@@ -1203,9 +1202,10 @@ angular.module("openshiftCommonUI")
                            NotificationsService,
                            ProjectsService,
                            annotationNameFilter,
-                           displayNameFilter) {
+                           displayNameFilter,
+                           gettextCatalog) {
         if(!($scope.submitButtonLabel)) {
-          $scope.submitButtonLabel = 'Save';
+          $scope.submitButtonLabel = gettextCatalog.getString('Save');
         }
 
         $scope.isDialog = $scope.isDialog === 'true';
@@ -1258,17 +1258,17 @@ angular.module("openshiftCommonUI")
 
                 NotificationsService.addNotification({
                   type: 'success',
-                  message: "Project \'"  + displayNameFilter(project) + "\' was successfully updated."
+                  message: gettextCatalog.getString("Project {{name}} was successfully updated.",{name: displayNameFilter(project)})
                 });
               }, function(result) {
                 $scope.disableInputs = false;
                 $scope.editableFields = editableFields($scope.project);
                 NotificationsService.addNotification({
                   type: 'error',
-                  message: "An error occurred while updating project \'" + displayNameFilter($scope.project) + "\'." ,
+                  message: gettextCatalog.getString("An error occurred while updating project {{displayName}}.",{displayName: displayNameFilter($scope.project)}),
                   details: $filter('getErrorDetails')(result)
                 });
-                Logger.error("Project \'" + displayNameFilter($scope.project) + "\' could not be updated.", result);
+                Logger.error(gettextCatalog.getString("Project {{displayName}} could not be updated.",{displayName: displayNameFilter($scope.project)}), result);
               });
           }
         };

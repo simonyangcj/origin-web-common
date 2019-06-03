@@ -15,7 +15,7 @@
     <span ng-attr-title="{{content}}" class="truncation-block">
       <span ng-bind-html="truncatedContent | highlightKeywords : keywords" class="truncated-content"></span>&hellip;
     </span>
-    <a ng-if="expandable" href="" ng-click="toggles.expanded = true" class="truncation-expand-link">See All</a>
+    <a ng-if="expandable" href="" ng-click="toggles.expanded = true" class="truncation-expand-link" translate>See All</a>
   </span>
   <span ng-if="toggles.expanded">
     <span ng-if="!linkify || (highlightKeywords | size)"
@@ -24,6 +24,6 @@
     <span ng-if="linkify && !(highlightKeywords | size)"
           ng-bind-html="content | linkify : '_blank'"
           class="truncated-content"></span>
-    <a href="" ng-if="!hideCollapse" ng-click="toggles.expanded = false" class="truncation-collapse-link">Collapse</a>
+    <a href="" ng-if="!hideCollapse" ng-click="toggles.expanded = false" class="truncation-collapse-link" translate>Collapse</a>
   </span>
 </span>

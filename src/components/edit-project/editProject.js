@@ -20,9 +20,10 @@ angular.module("openshiftCommonUI")
                            NotificationsService,
                            ProjectsService,
                            annotationNameFilter,
-                           displayNameFilter) {
+                           displayNameFilter,
+                           gettextCatalog) {
         if(!($scope.submitButtonLabel)) {
-          $scope.submitButtonLabel = 'Save';
+          $scope.submitButtonLabel = gettextCatalog.getString('Save');
         }
 
         $scope.isDialog = $scope.isDialog === 'true';
@@ -75,17 +76,17 @@ angular.module("openshiftCommonUI")
 
                 NotificationsService.addNotification({
                   type: 'success',
-                  message: "Project \'"  + displayNameFilter(project) + "\' was successfully updated."
+                  message: gettextCatalog.getString("Project {{name}} was successfully updated.",{name: displayNameFilter(project)})
                 });
               }, function(result) {
                 $scope.disableInputs = false;
                 $scope.editableFields = editableFields($scope.project);
                 NotificationsService.addNotification({
                   type: 'error',
-                  message: "An error occurred while updating project \'" + displayNameFilter($scope.project) + "\'." ,
+                  message: gettextCatalog.getString("An error occurred while updating project {{displayName}}.",{displayName: displayNameFilter($scope.project)}),
                   details: $filter('getErrorDetails')(result)
                 });
-                Logger.error("Project \'" + displayNameFilter($scope.project) + "\' could not be updated.", result);
+                Logger.error(gettextCatalog.getString("Project {{displayName}} could not be updated.",{displayName: displayNameFilter($scope.project)}), result);
               });
           }
         };

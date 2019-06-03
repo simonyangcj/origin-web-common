@@ -13,8 +13,10 @@ angular.module('openshiftCommonUI').component('bindServiceForm', {
     appToBind: '=' // only applicable to 'application' bindType
   },
   templateUrl: 'src/components/binding/bindServiceForm.html',
-  controller: function ($filter) {
+  controller: function ($filter, gettextCatalog) {
     var ctrl = this;
+
+    ctrl.uiSelectMatchPlaceholder = this.applications.length ? gettextCatalog.getString('Select an application') : gettextCatalog.getString('There are no applications in this project');
 
     var humanizeKind = $filter('humanizeKind');
     ctrl.groupByKind = function(object) {

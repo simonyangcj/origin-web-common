@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module("openshiftCommonUI")
-  .directive("deleteProject", function($uibModal, $location, $filter, $q, hashSizeFilter, APIService, NotificationsService, ProjectsService, Logger) {
+  .directive("deleteProject", function($uibModal, $location, $filter, $q, hashSizeFilter, APIService, NotificationsService, ProjectsService, Logger, gettextCatalog) {
     return {
       restrict: "E",
       scope: {
@@ -71,7 +71,7 @@ angular.module("openshiftCommonUI")
             ProjectsService.delete(scope.project).then(function() {
               NotificationsService.addNotification({
                 type: "success",
-                message: formattedResource + " was marked for deletion."
+                message: formattedResource + gettextCatalog.getString(" was marked for deletion.")
               });
 
               if (scope.success) {
@@ -84,10 +84,10 @@ angular.module("openshiftCommonUI")
               // called if failure to delete
               NotificationsService.addNotification({
                 type: "error",
-                message: formattedResource + " could not be deleted.",
+                message: formattedResource + gettextCatalog.getString(" could not be deleted."),
                 details: $filter('getErrorDetails')(err)
               });
-              Logger.error(formattedResource + " could not be deleted.", err);
+              Logger.error(formattedResource + gettextCatalog.getString(" could not be deleted."), err);
             });
           });
         };

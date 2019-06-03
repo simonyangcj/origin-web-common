@@ -13,12 +13,10 @@ angular.module("openshiftCommonUI")
       templateUrl: 'src/components/create-project/createProject.html',
       controller: function($scope, $location, ProjectsService, NotificationsService, displayNameFilter, Logger, gettextCatalog) {
         if(!($scope.submitButtonLabel)) {
-          $scope.submitButtonLabel = 'Create';
+          $scope.submitButtonLabel = gettextCatalog.getString('Create');
         }
 
         $scope.isDialog = $scope.isDialog === 'true';
-
-        console.log(gettextCatalog.getString('lala'));
 
         var hideErrorNotifications = function() {
           NotificationsService.hideNotification('create-project-error');
@@ -40,7 +38,7 @@ angular.module("openshiftCommonUI")
                 }
                 NotificationsService.addNotification({
                   type: "success",
-                  message: "Project \'"  + displayNameFilter(project) + "\' was successfully created."
+                  message: gettextCatalog.getString("Project {{name}} was successfully created.",{name: displayNameFilter(project)})
                 });
               }, function(result) {
                 $scope.disableInputs = false;
@@ -48,12 +46,12 @@ angular.module("openshiftCommonUI")
                 if (data.reason === 'AlreadyExists') {
                   $scope.nameTaken = true;
                 } else {
-                  var msg = data.message || "An error occurred creating project \'" + displayName + "\'.";
+                  var msg = data.message || gettextCatalog.getString("An error occurred creating project {{displayName}}.",{displayName: displayName});
                   NotificationsService.addNotification({
                     type: 'error',
                     message: msg
                   });
-                  Logger.error("Project \'" + displayName + "\' could not be created.", result);
+                  Logger.error(gettextCatalog.getString("Project {{displayName}} could not be created.",{displayName: displayName}), result);
                 }
               });
           }

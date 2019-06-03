@@ -2,15 +2,15 @@
   <form>
     <div class="form-group">
       <label>
-        <h3>Create a binding for application <strong>{{ctrl.applicationName}}</strong></h3>
+        <h3><span translate>Create a binding for application</span> <strong>{{ctrl.applicationName}}</strong></h3>
       </label>
-      <span class="help-block">
+      <span class="help-block" translate>
         Bindings create a secret containing the necessary information for an application to use a service.
       </span>
     </div>
   </form>
 
-  <label ng-if="!ctrl.allowNoBinding">
+  <label ng-if="!ctrl.allowNoBinding" translate>
     Select a service:
   </label>
   <form name="ctrl.formName">
@@ -19,10 +19,10 @@
         <div ng-if="ctrl.allowNoBinding" class="bind-service-selection">
           <label>
             <input type="radio" ng-model="ctrl.serviceToBind" ng-value="null">
-            Do not bind at this time.
+            <translate>Do not bind at this time.</translate>
           </label>
           <div class="bind-description">
-          <span class="help-block service-instance-name">
+          <span class="help-block service-instance-name" translate>
             Bindings can be created later from within a project.
           </span>
           </div>
@@ -35,7 +35,7 @@
           <div class="bind-description">
             <span class="pficon pficon-info"
                   ng-if="!(serviceInstance | isServiceInstanceReady)"
-                  data-content="This service is not yet ready. If you bind to it, then the binding will be pending until the service is ready."
+                  data-content="{{'This service is not yet ready. If you bind to it, then the binding will be pending until the service is ready.' | translate}}"
                   data-toggle="popover"
                   data-trigger="hover">
             </span>
@@ -46,7 +46,7 @@
         </div>
         <h4 ng-if="!ctrl.bindableServiceInstances.length">
           <span class="pficon pficon-info" aria-hidden="true"></span>
-          <span class="help-block service-instance-name">
+          <span class="help-block service-instance-name" translate>
             There are no bindable services in this project
           </span>
         </h4>

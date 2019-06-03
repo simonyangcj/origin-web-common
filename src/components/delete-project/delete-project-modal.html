@@ -5,18 +5,17 @@
       <button type="button" class="close" data-dismiss="modal" aria-hidden="true" aria-label="Close" ng-click="cancel()">
         <span class="pficon pficon-close"></span>
       </button>
-      <h1 class="modal-title">Are you sure you want to delete the project '<strong>{{project | displayName}}</strong>'?</h1>
+      <h1 class="modal-title"><translate>Are you sure you want to delete the project</translate> '<strong>{{project | displayName}}</strong>'?</h1>
     </div>
     <div class="modal-body">
       <p>
-        This will <strong>delete all resources</strong> associated with
-        the project {{project | displayName}} and <strong>cannot be
-        undone</strong>.  Make sure this is something you really want to do!
+        <translate>This will</translate> <strong translate>delete all resources</strong> <translate>associated with the project</translate> {{project | displayName}} <translate>and</translate>
+        <strong translate>cannot be undone</strong>.  <translate>Make sure this is something you really want to do!</translate>
       </p>
       <div ng-show="typeNameToConfirm">
-        <p>Type <strong>{{project.metadata.name}}</strong> to confirm deletion.</p>
+        <p><translate>Type</translate> <strong>{{project.metadata.name}}</strong> <translate>to confirm deletion.</translate></p>
         <p>
-          <label class="sr-only" for="resource-to-delete">project to delete</label>
+          <label class="sr-only" for="resource-to-delete" translate>project to delete</label>
           <input
               ng-model="confirmName"
               id="resource-to-delete"
@@ -30,7 +29,7 @@
       </div>
     </div>
     <div class="modal-footer">
-      <button class="btn btn-default" type="button" ng-click="cancel()">Cancel</button>
+      <button class="btn btn-default" type="button" ng-click="cancel()" translate>Cancel</button>
       <button ng-disabled="typeNameToConfirm && confirmName !== project.metadata.name && confirmName !== (project | displayName : false)" class="btn btn-danger" type="submit" ng-click="delete()">Delete</button>
     </div>
   </form>

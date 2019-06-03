@@ -1,21 +1,21 @@
 <form name="editProjectForm">
   <fieldset ng-disabled="disableInputs">
     <div class="form-group">
-      <label for="displayName">Display Name</label>
+      <label for="displayName" translate>Display Name</label>
       <input class="form-control"
              name="displayName"
              id="displayName"
-             placeholder="My Project"
+             placeholder="{{My Project | translate}}"
              type="text"
              ng-model="editableFields.displayName">
     </div>
 
     <div class="form-group">
-      <label for="description">Description</label>
+      <label for="description" translate>Description</label>
                     <textarea class="form-control"
                               name="description"
                               id="description"
-                              placeholder="A short description."
+                              placeholder="{{A short description. | translate}}"
                               ng-model="editableFields.description"></textarea>
     </div>
 
@@ -29,7 +29,7 @@
       <button
           class="btn btn-default"
           ng-class="{'dialog-btn': isDialog}"
-          ng-click="cancelEditProject()">
+          ng-click="cancelEditProject()" translate>
         Cancel
       </button>
     </div>
