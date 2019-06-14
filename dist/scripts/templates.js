@@ -347,7 +347,7 @@ angular.module('openshiftCommonUI').run(['$templateCache', function($templateCac
     "      <input class=\"form-control\"\n" +
     "             name=\"displayName\"\n" +
     "             id=\"displayName\"\n" +
-    "             placeholder=\"{{My Project | translate}}\"\n" +
+    "             placeholder=\"{{'My Project' | translate}}\"\n" +
     "             type=\"text\"\n" +
     "             ng-model=\"editableFields.displayName\">\n" +
     "    </div>\n" +
@@ -357,7 +357,7 @@ angular.module('openshiftCommonUI').run(['$templateCache', function($templateCac
     "                    <textarea class=\"form-control\"\n" +
     "                              name=\"description\"\n" +
     "                              id=\"description\"\n" +
-    "                              placeholder=\"{{A short description. | translate}}\"\n" +
+    "                              placeholder=\"{{'A short description.' | translate}}\"\n" +
     "                              ng-model=\"editableFields.description\"></textarea>\n" +
     "    </div>\n" +
     "\n" +

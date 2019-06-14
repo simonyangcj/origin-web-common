@@ -5,6 +5,7 @@ msgstr ""
 "Project-Id-Version: \n"
 
 #: src/components/create-project/createProject.html:65
+#: src/components/edit-project/editProject.html:18
 msgid "A short description."
 msgstr ""
 
@@ -136,6 +137,7 @@ msgid "Make sure this is something you really want to do!"
 msgstr ""
 
 #: src/components/create-project/createProject.html:55
+#: src/components/edit-project/editProject.html:8
 msgid "My Project"
 msgstr ""
 
