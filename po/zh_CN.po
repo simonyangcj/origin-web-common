@@ -53,13 +53,13 @@ msgstr "从项目中创建Bindings。"
 msgid ""
 "Bindings create a secret containing the necessary information for an "
 "application to use a service."
-msgstr "Bindings创建一个有应用使用service必要信息的secret。"
+msgstr "Bindings创建一个secret，其中包含一个应用使用service时需要的必要信息。"
 
 #: src/components/binding/bindServiceForm.html:7
 msgid ""
 "Bindings create a secret containing the necessary information for an "
 "application to use this service."
-msgstr "Bindings创建一个有应用使用该service必要信息的secret。"
+msgstr "Bindings创建一个secret，其中包含一个应用使用service时需要的必要信息。"
 
 #: src/components/create-project/createProject.html:78
 #: src/components/delete-project/delete-project-modal.html:32
@@ -162,7 +162,7 @@ msgstr "名称"
 
 #: src/components/create-project/createProject.html:28
 msgid "Name is required."
-msgstr "名称必须。"
+msgstr "名称是必选项。"
 
 #: src/components/create-project/createProject.html:33
 msgid "Name must have at least two characters."
@@ -170,7 +170,7 @@ msgstr "名称最少两个字符。"
 
 #: src/components/binding/bindResults.html:4
 msgid "Pending"
-msgstr "加载"
+msgstr "加载中"
 
 #: src/components/create-project/createProject.js:54
 msgid "Project {{displayName}} could not be created."
@@ -206,7 +206,7 @@ msgstr "保存"
 
 #: src/components/binding/bindServiceForm.html:39
 msgid "Secrets can be referenced later from an application."
-msgstr "密钥以后可以从应用中引用。"
+msgstr "密钥后续可以在应用中被引用。"
 
 #: src/components/truncate-long-text/truncateLongText.html:18
 msgid "See All"
@@ -252,7 +252,7 @@ msgstr "绑定操作创建密钥"
 msgid ""
 "The binding secret will only be available to new pods. You will need to "
 "redeploy your application."
-msgstr "绑定secret只能用于新pods，你需要重新部署应用。"
+msgstr "绑定的secret只能用于新pods，你需要重新部署应用。"
 
 #: src/components/binding/bindServiceForm.js:19
 msgid "There are no applications in this project"
@@ -260,7 +260,7 @@ msgstr "此项目中没有应用"
 
 #: src/components/binding/bindApplicationForm.html:49
 msgid "There are no bindable services in this project"
-msgstr "项目中没有可绑定的服务"
+msgstr "项目中没有可绑定的services"
 
 #: src/components/binding/bindResults.html:9
 msgid "This may take several minutes."
