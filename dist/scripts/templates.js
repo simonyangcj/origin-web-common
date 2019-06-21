@@ -301,11 +301,11 @@ angular.module('openshiftCommonUI').run(['$templateCache', function($templateCac
     "    </div>\n" +
     "    <div class=\"modal-body\">\n" +
     "      <p>\n" +
-    "        <translate>This will</translate> <strong translate>delete all resources</strong> <translate>associated with the project</translate> {{project | displayName}} <translate>and</translate>\n" +
+    "        <translate>This will</translate> <strong translate>delete all resources</strong> <translate>associated with the project</translate> {{project | displayName}} <translate>and the action</translate>\n" +
     "        <strong translate>cannot be undone</strong>.  <translate>Make sure this is something you really want to do!</translate>\n" +
     "      </p>\n" +
     "      <div ng-show=\"typeNameToConfirm\">\n" +
-    "        <p><translate>Type</translate> <strong>{{project.metadata.name}}</strong> <translate>to confirm deletion.</translate></p>\n" +
+    "        <p><translate>Please type</translate> <strong>{{project.metadata.name}}</strong> <translate>to confirm deletion.</translate></p>\n" +
     "        <p>\n" +
     "          <label class=\"sr-only\" for=\"resource-to-delete\" translate>project to delete</label>\n" +
     "          <input\n" +
@@ -322,7 +322,7 @@ angular.module('openshiftCommonUI').run(['$templateCache', function($templateCac
     "    </div>\n" +
     "    <div class=\"modal-footer\">\n" +
     "      <button class=\"btn btn-default\" type=\"button\" ng-click=\"cancel()\" translate>Cancel</button>\n" +
-    "      <button ng-disabled=\"typeNameToConfirm && confirmName !== project.metadata.name && confirmName !== (project | displayName : false)\" class=\"btn btn-danger\" type=\"submit\" ng-click=\"delete()\">Delete</button>\n" +
+    "      <button ng-disabled=\"typeNameToConfirm && confirmName !== project.metadata.name && confirmName !== (project | displayName : false)\" class=\"btn btn-danger\" type=\"submit\" ng-click=\"delete()\" translate>Delete</button>\n" +
     "    </div>\n" +
     "  </form>\n" +
     "</div>\n"

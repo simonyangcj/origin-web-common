@@ -13,6 +13,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/components/create-project/createProject.html:65
+#: src/components/edit-project/editProject.html:18
 msgid "A short description."
 msgstr "简述。"
 
@@ -33,8 +34,8 @@ msgid "An error occurred while updating project {{displayName}}."
 msgstr "更新项目{{displayName}}出现错误。"
 
 #: src/components/delete-project/delete-project-modal.html:12
-msgid "and"
-msgstr "以及"
+msgid "and the action"
+msgstr "关联的资源并且"
 
 #: src/components/delete-project/delete-project-modal.html:8
 msgid "Are you sure you want to delete the project"
@@ -42,7 +43,7 @@ msgstr "确定删除项目"
 
 #: src/components/delete-project/delete-project-modal.html:12
 msgid "associated with the project"
-msgstr "关联项目"
+msgstr "与项目"
 
 #: src/components/binding/bindApplicationForm.html:25
 #: src/components/binding/bindServiceForm.html:46
@@ -53,13 +54,15 @@ msgstr "从项目中创建Bindings。"
 msgid ""
 "Bindings create a secret containing the necessary information for an "
 "application to use a service."
-msgstr "Bindings创建一个secret，其中包含一个应用使用service时需要的必要信息。"
+msgstr ""
+"Bindings创建一个secret，其中包含一个应用使用service时需要的必要信息。"
 
 #: src/components/binding/bindServiceForm.html:7
 msgid ""
 "Bindings create a secret containing the necessary information for an "
 "application to use this service."
-msgstr "Bindings创建一个secret，其中包含一个应用使用service时需要的必要信息。"
+msgstr ""
+"Bindings创建一个secret，其中包含一个应用使用service时需要的必要信息。"
 
 #: src/components/create-project/createProject.html:78
 #: src/components/delete-project/delete-project-modal.html:32
@@ -101,9 +104,13 @@ msgstr "给应用创建绑定"
 msgid "Create a secret in"
 msgstr "创建密钥在"
 
+#: src/components/delete-project/delete-project-modal.html:33
+msgid "Delete"
+msgstr "删除"
+
 #: src/components/delete-project/delete-project-modal.html:12
 msgid "delete all resources"
-msgstr "删除所有资源"
+msgstr "删除所有"
 
 #: src/components/delete-project/delete-project-button.html:10
 msgid "Delete Project"
@@ -149,6 +156,7 @@ msgid "Make sure this is something you really want to do!"
 msgstr "确认当前操作！"
 
 #: src/components/create-project/createProject.html:55
+#: src/components/edit-project/editProject.html:8
 msgid "My Project"
 msgstr "我的项目"
 
@@ -171,6 +179,10 @@ msgstr "名称最少两个字符。"
 #: src/components/binding/bindResults.html:4
 msgid "Pending"
 msgstr "加载中"
+
+#: src/components/delete-project/delete-project-modal.html:16
+msgid "Please type"
+msgstr "请输入"
 
 #: src/components/create-project/createProject.js:54
 msgid "Project {{displayName}} could not be created."
@@ -288,13 +300,15 @@ msgstr "项目中，供以后使用"
 msgid "to confirm deletion."
 msgstr "确认删除。"
 
-#: src/components/delete-project/delete-project-modal.html:16
-msgid "Type"
-msgstr "类型"
-
 #: src/components/delete-project/deleteProject.js:74
 msgid "was marked for deletion."
 msgstr "被标记用于删除。"
+
+#~ msgid "and"
+#~ msgstr "以及"
+
+#~ msgid "Type"
+#~ msgstr "输入"
 
 #~ msgid "lala"
 #~ msgstr "啦啦"

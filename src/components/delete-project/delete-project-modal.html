@@ -9,11 +9,11 @@
     </div>
     <div class="modal-body">
       <p>
-        <translate>This will</translate> <strong translate>delete all resources</strong> <translate>associated with the project</translate> {{project | displayName}} <translate>and</translate>
+        <translate>This will</translate> <strong translate>delete all resources</strong> <translate>associated with the project</translate> {{project | displayName}} <translate>and the action</translate>
         <strong translate>cannot be undone</strong>.  <translate>Make sure this is something you really want to do!</translate>
       </p>
       <div ng-show="typeNameToConfirm">
-        <p><translate>Type</translate> <strong>{{project.metadata.name}}</strong> <translate>to confirm deletion.</translate></p>
+        <p><translate>Please type</translate> <strong>{{project.metadata.name}}</strong> <translate>to confirm deletion.</translate></p>
         <p>
           <label class="sr-only" for="resource-to-delete" translate>project to delete</label>
           <input
@@ -30,7 +30,7 @@
     </div>
     <div class="modal-footer">
       <button class="btn btn-default" type="button" ng-click="cancel()" translate>Cancel</button>
-      <button ng-disabled="typeNameToConfirm && confirmName !== project.metadata.name && confirmName !== (project | displayName : false)" class="btn btn-danger" type="submit" ng-click="delete()">Delete</button>
+      <button ng-disabled="typeNameToConfirm && confirmName !== project.metadata.name && confirmName !== (project | displayName : false)" class="btn btn-danger" type="submit" ng-click="delete()" translate>Delete</button>
     </div>
   </form>
 </div>

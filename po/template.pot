@@ -26,7 +26,7 @@ msgid "An error occurred while updating project {{displayName}}."
 msgstr ""
 
 #: src/components/delete-project/delete-project-modal.html:12
-msgid "and"
+msgid "and the action"
 msgstr ""
 
 #: src/components/delete-project/delete-project-modal.html:8
@@ -88,6 +88,10 @@ msgstr ""
 
 #: src/components/binding/bindServiceForm.html:37
 msgid "Create a secret in"
+msgstr ""
+
+#: src/components/delete-project/delete-project-modal.html:33
+msgid "Delete"
 msgstr ""
 
 #: src/components/delete-project/delete-project-modal.html:12
@@ -159,6 +163,10 @@ msgstr ""
 
 #: src/components/binding/bindResults.html:4
 msgid "Pending"
+msgstr ""
+
+#: src/components/delete-project/delete-project-modal.html:16
+msgid "Please type"
 msgstr ""
 
 #: src/components/create-project/createProject.js:54
@@ -269,10 +277,6 @@ msgstr ""
 
 #: src/components/delete-project/delete-project-modal.html:16
 msgid "to confirm deletion."
-msgstr ""
-
-#: src/components/delete-project/delete-project-modal.html:16
-msgid "Type"
 msgstr ""
 
 #: src/components/delete-project/deleteProject.js:74
